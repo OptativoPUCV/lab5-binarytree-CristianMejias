@@ -55,8 +55,12 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 }
 
 TreeNode * minimum(TreeNode * x){
-
-    return NULL;
+    //Nodo inicial a recorrer
+    TreeNode *nodoActual = x;
+    //recorrer siempre a la izquierda hasta llegar a null
+    while (nodoActual->left != NULL)
+        nodoActual = nodoActual->left;
+    return nodoActual;
 }
 
 
