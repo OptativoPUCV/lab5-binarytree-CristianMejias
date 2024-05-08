@@ -52,14 +52,27 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
     //Creamos noso para almacenar datos
-    TreeNode *nodo = createTreeNode(key, value);
+    TreeNode *nuevoNodo = createTreeNode(key, value);
+    
     //Si el arbol es nulo solo tengo que agregar los datos
     if (arbolito == NULL) {
         //raiz y actual apuntaran al nodo creado
-        arbolito->root = nodo;
-        arbolito->current = nodo;
+        arbolito->root = nuevoNodo;
+        arbolito->current = nuevoNodo;
         return;
     }
+    //Si el arbol no es nulo
+    else {
+        TreeNode *nodoAux = arbolito->root;
+        
+        
+    }
+    3. Si la clave del nodo actual es igual a la clave a insertar, entonces se actualiza el dato del nodo.
+    4. Si la clave a insertar es menor que la clave del nodo actual, se va hacia el subárbol izquierdo.
+    5. Si el subárbol izquierdo está vacío, se inserta el nuevo nodo allí. Si no, se repite el proceso desde el paso 3.
+    6. Si la clave a insertar es mayor que la clave del nodo actual, se va hacia el subárbol derecho.
+    7. Si el subárbol derecho está vacío, se inserta el nuevo nodo allí. Si no, se repite el proceso desde el paso 3.
+
     
 
 }
