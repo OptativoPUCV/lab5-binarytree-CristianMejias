@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "treemap.h"
+#include "stdbool.h"
 
 typedef struct TreeNode TreeNode;
 
@@ -64,6 +65,14 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
     //Si el arbol no es nulo
     else {
         TreeNode *nodoAux = arbolito->root;
+
+        while (true) {
+            //Caso izquierda o derecha sin hijos
+            if (nodoAux->left == NULL || nodoAux->right == NULL)
+                break;
+            //Caso clave nodo es igual a clave insertar
+            if (is_equal(arbolito, nodoAux->key, key))
+        }
         
         
     }
