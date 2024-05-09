@@ -54,6 +54,8 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
     //Creamos noso para almacenar datos
     TreeNode *nuevoNodo = createTreeNode(key, value);
+    TreeNode *nodoPosicion = NULL;
+    Pair *pair = NULL;
     
     //Si el arbol es nulo solo tengo que agregar los datos
     if (arbolito == NULL) {
