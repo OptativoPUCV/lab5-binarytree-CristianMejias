@@ -103,6 +103,7 @@ TreeNode * minimum(TreeNode * x){
 void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *nodoEliminar = node;
     TreeNode *nodoPadre = nodoEliminar->parent;
+    TreeNode *nodoHijo;
 
     //caso nodo eliminar es el primero
     if (nodoPadre == NULL) {
@@ -118,8 +119,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     //caso el nodo eliminar tiene 1 hijo
     else if (nodoEliminar->left == NULL || nodoEliminar->right == NULL) {
-        TreeNode *nodoHijo;
-        
         //determinar si es derecha o izquierda
         if (nodoEliminar->left == NULL)
             nodoHijo = nodoEliminar->right;
