@@ -110,7 +110,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         return;
     }
     //caso el nodo eliminar no tiene hijos
-    if (nodoEliminar->left == NULL && nodoEliminar->right) {
+    if (nodoEliminar->left == NULL && nodoEliminar->right == NULL) {
         if (nodoPadre->left == nodoEliminar)
             nodoPadre->left = NULL;
         else
