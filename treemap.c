@@ -132,6 +132,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         //caso es mayor
         else
             nodoActual = nodoActual->right;
+        tree->current = nodoActual;
     }
     return NULL;
 }
