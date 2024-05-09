@@ -52,40 +52,45 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
+    /*
     //Creamos noso para almacenar datos
     TreeNode *nuevoNodo = createTreeNode(key, value);
     TreeNode *nodoPosicion = NULL;
     Pair *pair = NULL;
     
     //Si el arbol es nulo solo tengo que agregar los datos
-    if (arbolito == NULL) {
+    if (arbolito->root == NULL) {
         //raiz y actual apuntaran al nodo creado
         arbolito->root = nuevoNodo;
         arbolito->current = nuevoNodo;
         return;
     }
     //Si el arbol no es nulo buscamos posicion a insertar
-    else {
-        while (true) {
-            TreeNode *nodoPosicion = arbolito->root;
-            Pair *pair = nodoPosicion->pair;
+    while (true) {
+        nodoPosicion = arbolito->root;
+        pair = nodoPosicion->pair;
 
-            //Caso izquierda o derecha sin hijos
-            if (nodoPosicion->left == NULL || nodoPosicion->right == NULL)
-                break;
-            //Caso clave nodo es igual a clave insertar
-            if (is_equal(arbolito, pair->key, key))
-                break;
-            //Caso clave nodo es menor o mayor avanzamos
-            else if (arbolito->lower_than(pair->key, key))
-                nodoPosicion = nodoPosicion->left;
-            else
-                nodoPosicion = nodoPosicion->right;
-        }
-        //asignamos a posicion encontrada
-        nuevoNodo->parent = nodoPosicion;
-        arbolito->current = nodoPosicion;
+        //Caso izquierda o derecha sin hijos
+        if (nodoPosicion->left == NULL || nodoPosicion->right == NULL)
+            break;
+        //Caso clave nodo es igual a clave insertar
+        if (is_equal(arbolito, pair->key, key))
+            return;
+        //Caso clave nodo es menor o mayor avanzamos
+        if (arbolito->lower_than(pair->key, key))
+            nodoPosicion = nodoPosicion->right;
+        else
+            nodoPosicion = nodoPosicion->left;
     }
+    if (nodoPosicion->left == NULL)
+        nodoPosicion->left = nuevoNodo;
+    else
+        nodoPosicion->right = nuevoNodo;
+        
+    //asignamos a posicion encontrada
+    nuevoNodo->parent = nodoPosicion;
+    arbolito->current = nodoPosicion;
+    */
 }
 
 TreeNode * minimum(TreeNode * x){
