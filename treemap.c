@@ -124,15 +124,17 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     while (nodoActual != NULL) {
         pairActual = nodoActual->pair;
         //comprobamos si nodo actual tiene el dato buscado
-        if (is_equal(tree, pairActual->key, key))
+        //no olvidar actualizar current
+        if (is_equal(tree, pairActual->key, key)) {
+            tree->current = nodoActual;
             return pairActual;
+        }
         //caso que es menor
         else if (tree->lower_than(key, pairActual->key))
             nodoActual = nodoActual->left;
         //caso es mayor
         else
             nodoActual = nodoActual->right;
-        tree->current = nodoActual;
     }
     return NULL;
 }
