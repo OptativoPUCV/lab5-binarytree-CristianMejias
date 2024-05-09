@@ -116,10 +116,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         else
             nodoPadre->right = NULL;
     }
-    /*
     //caso el nodo eliminar tiene 1 hijo
     else if (nodoEliminar->left == NULL || nodoEliminar->right == NULL) {
-        TreeNode *nodoHijo = NULL;
+        TreeNode *nodoHijo;
         
         //determinar si es derecha o izquierda
         if (nodoEliminar->left == NULL)
@@ -143,7 +142,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         nodoEliminar->pair = aux->pair;
         
     }
-    */
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
