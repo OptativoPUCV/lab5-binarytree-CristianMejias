@@ -70,8 +70,10 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
         pair = nodoPosicion->pair;
 
         //Caso izquierda o derecha sin hijos
+        /*
         if (nodoPosicion->left == NULL && nodoPosicion->right == NULL)
             break;
+        */
         //Caso clave nodo es igual a clave insertar
         if (is_equal(arbolito, pair->key, key))
             return;
@@ -81,14 +83,14 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
         else
             nodoPosicion = nodoPosicion->left;
     }
-    if (nodoPosicion->left == NULL)
-        nodoPosicion->left = nuevoNodo;
-    else
+    if (nodoPosicion->right == NULL)
         nodoPosicion->right = nuevoNodo;
+    else
+        nodoPosicion->left = nuevoNodo;
         
     //asignamos a posicion encontrada
     nuevoNodo->parent = nodoPosicion;
-    arbolito->current = nodoPosicion;
+    arbolito->current = nuevoNodo;
 }
 
 TreeNode * minimum(TreeNode * x){
