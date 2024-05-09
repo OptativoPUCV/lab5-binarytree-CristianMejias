@@ -70,10 +70,9 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
         pair = nodoPosicion->pair;
 
         //Caso izquierda o derecha sin hijos
-        /*
-        if (nodoPosicion->left == NULL && nodoPosicion->right == NULL)
+        
+        if (nodoPosicion->left == NULL || nodoPosicion->right == NULL)
             break;
-        */
         //Caso clave nodo es igual a clave insertar
         if (is_equal(arbolito, pair->key, key))
             return;
