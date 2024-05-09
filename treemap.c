@@ -62,28 +62,28 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
         arbolito->current = nuevoNodo;
         return;
     }
-    //Si el arbol no es nulo
+    //Si el arbol no es nulo buscamos posicion a insertar
     else {
-        TreeNode *nodoAux = arbolito->root;
-
         while (true) {
+            TreeNode *nodoPosicion = arbolito->root;
+            Pair *pair = nodoPosicion->pair;
+
             //Caso izquierda o derecha sin hijos
-            if (nodoAux->left == NULL || nodoAux->right == NULL)
+            if (nodoPosicion->left == NULL || nodoPosicion->right == NULL)
                 break;
             //Caso clave nodo es igual a clave insertar
-            if (is_equal(arbolito, nodoAux->key, key))
+            if (is_equal(arbolito, pair->key, key))
+                break;
+            //Caso clave nodo es menor o mayor avanzamos
+            else if (arbolito->lower_than(pair->key, key))
+                nodoPosicion = nodoPosicion->left;
+            else
+                nodoPosicion = nodoPosicion->right;
         }
-        
-        
+        //asignamos a posicion encontrada
+        nuevoNodo->parent = nodoPosicion;
+        arbolito->current = nodoPosicion;
     }
-    3. Si la clave del nodo actual es igual a la clave a insertar, entonces se actualiza el dato del nodo.
-    4. Si la clave a insertar es menor que la clave del nodo actual, se va hacia el subárbol izquierdo.
-    5. Si el subárbol izquierdo está vacío, se inserta el nuevo nodo allí. Si no, se repite el proceso desde el paso 3.
-    6. Si la clave a insertar es mayor que la clave del nodo actual, se va hacia el subárbol derecho.
-    7. Si el subárbol derecho está vacío, se inserta el nuevo nodo allí. Si no, se repite el proceso desde el paso 3.
-
-    
-
 }
 
 TreeNode * minimum(TreeNode * x){
