@@ -58,8 +58,8 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
     TreeNode *nodoPosicion = arbolito->root;
     Pair *pair = NULL;
     
-    //Si el arbol es nulo solo tengo que agregar los datos
-    if (arbolito->root == NULL) {
+    //Si el arbol no tiene datos solo tengo que agregar los datos
+    if (nodoPosicion == NULL) {
         //raiz y actual apuntaran al nodo creado
         arbolito->root = nuevoNodo;
         arbolito->current = nuevoNodo;
@@ -70,7 +70,7 @@ void insertTreeMap(TreeMap * arbolito, void* key, void * value) {
         pair = nodoPosicion->pair;
 
         //Caso izquierda o derecha sin hijos
-        if (nodoPosicion->left == NULL || nodoPosicion->right == NULL)
+        if (nodoPosicion->left == NULL && nodoPosicion->right == NULL)
             break;
         //Caso clave nodo es igual a clave insertar
         if (is_equal(arbolito, pair->key, key))
