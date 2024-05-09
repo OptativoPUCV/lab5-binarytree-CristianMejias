@@ -136,10 +136,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     //caso el nodo eliminar tiene 2 hijos
     else {
-        TreeNode *aux = minimum(nodoEliminar->right);
-        removeNode(tree, aux);
-        nodoEliminar->pair = aux->pair;
-        
+        TreeNode *sucesor = minimum(nodoEliminar->right);
+        nodoEliminar->pair = sucesor->pair;
+        removeNode(tree, sucesor);
     }
 }
 
