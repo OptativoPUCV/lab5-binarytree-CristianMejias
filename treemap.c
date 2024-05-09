@@ -135,6 +135,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         //actualizar padre
         nodoHijo->parent = nodoPadre;
     }
+    //caso el nodo eliminar tiene 2 hijos
+    else {
+        
+    }
+        
     
 
 }
