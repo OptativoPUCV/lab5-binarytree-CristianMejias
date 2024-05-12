@@ -183,7 +183,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode *aux = tree->root;
-    TreeNode *ub = tree->root;
+    TreeNode *ub = NULL;
 
     //recorremos mientras no sea nulo y nos movemos a la derecha o izquierda
     while (aux != NULL) {
