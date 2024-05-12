@@ -211,7 +211,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         
         if (current->parent != NULL) {
             current = current->parent;
-            return current->pair;
+            return current->parent->pair;
         }
     }
     return NULL;
