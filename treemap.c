@@ -199,7 +199,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (current->right != NULL) {
         minimo = minimum(current->right);
         //actualizo current y retorno
-        current = minimo;
+        tree->current = minimo;
         return minimo->pair;
     }
     else {
@@ -210,7 +210,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         
         if (current->parent != NULL) {
-            current = current->parent;
+            tree->current = current->parent;
             return current->parent->pair;
         }
     }
