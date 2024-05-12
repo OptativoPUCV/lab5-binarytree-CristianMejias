@@ -204,11 +204,15 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else {
         current = current->parent;
-        //recorrer hasta encontrar raiz o clave
+        //recorrer hasta encontrar raiz o current
         while (current != NULL && current == current->parent->right) {
             current = current->parent;
         }
         
+        if (current->parent != NULL) {
+            current = current->parent;
+            return current->pair;
+        }
     }
     return NULL;
 }
