@@ -193,9 +193,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
             ub = aux;
             aux = aux->left;
         }
-        
     }
-    return NULL;
+    
+    return ub->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
