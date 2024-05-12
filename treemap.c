@@ -107,6 +107,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
     //caso nodo eliminar es el primero
     /*
+    //nose porque da error de segmentacion
     if (nodoPadre == NULL) {
         tree->root = NULL;
         return;
