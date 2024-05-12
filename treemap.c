@@ -192,5 +192,23 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+    TreeNode *current = tree->current;
+    TreeNode *minimo = NULL;
+
+    //si tiene hijo derecho el siguiente sera el minimo del sub arbol
+    if (current->right != NULL) {
+        minimo = minimum(current->right);
+        //actualizo current y retorno
+        current = minimo;
+        return minimo->pair;
+    }
+    else {
+        current = current->parent;
+        //recorrer hasta encontrar raiz o clave
+        while (current != NULL && current == current->parent->right) {
+            current = current->parent;
+        }
+        
+    }
     return NULL;
 }
