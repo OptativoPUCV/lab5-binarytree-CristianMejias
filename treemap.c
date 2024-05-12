@@ -205,7 +205,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     else {
         current = current->parent;
         //recorrer hasta encontrar raiz o current
-        while (current != NULL && current == current->parent->right) {
+        while (current->parent != NULL && current == current->parent->right) {
             current = current->parent;
         }
         
