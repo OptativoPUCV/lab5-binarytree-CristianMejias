@@ -187,7 +187,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
     //recorremos mientras no sea nulo y nos movemos a la derecha o izquierda
     while (aux != NULL) {
-        if (tree->lower_tan(aux->pair, key))
+        if (tree->lower_than(aux->pair, key))
             aux = aux->right;
         else {
             ub = aux;
