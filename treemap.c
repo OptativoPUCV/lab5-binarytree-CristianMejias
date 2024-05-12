@@ -182,6 +182,19 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    TreeNode *aux = tree->root;
+    TreeNode *ub = tree->root;
+
+    //recorremos mientras no sea nulo y nos movemos a la derecha o izquierda
+    while (aux != NULL) {
+        if (tree->lower_tan(aux->pair, key))
+            aux = aux->right;
+        else {
+            ub = aux;
+            aux = aux->left;
+        }
+        
+    }
     return NULL;
 }
 
